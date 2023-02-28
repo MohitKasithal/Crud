@@ -1,0 +1,93 @@
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.nav_bar_wrapper a {
+  color: rgb(51, 188, 124);
+  text-decoration: none;
+  padding-left: 20px;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.form-log {
+  width: 400px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  text-align: start;
+  border-radius: 5px;
+  box-shadow: 0px 0px 15px 0px #bdb9b949;
+  margin-top: 50px;
+}
+.form-log input {
+  width: 295px;
+}
+.formAdd input {
+  width: 90%;
+  margin-bottom: 15px;
+}
+.form-input {
+  /* border: 1px solid #333; */
+  border-radius: 25px;
+  margin-bottom: 10px;
+}
+.form-input input {
+  border-radius: 25px;
+  outline: none;
+  height: 100%;
+}
+.eye {
+  position: absolute;
+  right: 15px;
+  background-color: #fff;
+  outline: none;
+  border: none;
+  border-radius: 80%;
+  font-size: 20px;
+  top: 0px;
+}
+.eye2 {
+  position: absolute;
+  right: 15px;
+  outline: none;
+  border: none;
+  border-radius: 100%;
+  font-size: 20px;
+  top: 11px;
+  margin-top: 22px;
+  background: #fff;
+}
+.form {
+  width: 100%;
+  padding: 15px;
+}
+.form input {
+  width: 90%;
+}
+.btn-div {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.div-update {
+  width: 400px;
+}
+.nav-container {
+  width: auto;
+}
+.inp-br {
+  border: 1px solid green;
+}
