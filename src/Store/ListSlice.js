@@ -58,6 +58,3 @@ const ListSlice = createSlice({
 
 export const { deleteUser, update } = ListSlice.actions;
 export default ListSlice.reducer;
-
-// //createAsyncThunk use with post api in redux-toolkit?
-//   create with slice reducer or extraReducer for delete item from api with redux-toolkit inreact.js?

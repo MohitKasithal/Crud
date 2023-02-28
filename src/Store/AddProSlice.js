@@ -41,5 +41,3 @@ const AddProSlice = createSlice({
 
 export const { users } = AddProSlice.actions;
 export default AddProSlice.reducer;
-
-//createAsyncThunk use with post api in redux-toolkit?

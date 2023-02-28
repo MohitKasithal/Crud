@@ -5,12 +5,9 @@ import { Link } from "react-router-dom";
 import Header from "../Component/Header";
 import { deleteListItem, deleteUser, getListApi } from "../Store/ListSlice";
 function ProductList() {
-  // let [data, setData] = useState([]);
-
   const dispatch = useDispatch();
 
   const { users } = useSelector((state) => state.proSilce);
-  // console.log(users);
 
   useEffect(() => {
     dispatch(getListApi());
@@ -67,27 +64,3 @@ function ProductList() {
 }
 
 export default ProductList;
-
-//  onClick={handleRemoveUser(item.id)}
-//  without clicking any button and data.map with slice method of redux toolkit?
-
-/**
- *  // async function deleteItem(id)
-  // {
-  //   let result = await fetch('http://localhost:3000/addProduct/'+id,
-  //   {
-  //       method:"DELETE"
-  //     });
-  //     result = await result.json();
-  //     fetchMyAPI()
-  //   }
-    
-  //   async function fetchMyAPI() {
-  //     let response = await  fetch('http://localhost:3000/addProduct')
-  //     response = await  response.json();
-  //     setData(response);
-  //     console.log(response,'response')
-  //   }
-    
- */
-// create a reduer for delete a item with id with redux toolkit?

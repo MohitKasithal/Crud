@@ -8,7 +8,6 @@ const store = configureStore({
     inputValue: AddProSlice,
     register: registerSlice,
     proSilce: ListSlice,
-    // updata: updateSlice,
   },
 });
 export default store;
