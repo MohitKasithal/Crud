@@ -26,20 +26,11 @@ function Login() {
     initialValues: initialValues,
     validationSchema: LoginSchema,
     onSubmit: (values, action) => {
-      //   console.log("values", values);
       localStorage.setItem("user-info", JSON.stringify(values));
       navigate("/");
       action.resetForm();
     },
   });
-
-  //   async function login() {
-  //     // console.log('data',email,pass)
-  //     let item = { email, pass };
-  //     localStorage.setItem("user-info", JSON.stringify(item));
-  //     // dispatch(loginApi(item))
-  //     navigate("/Add");
-  //   }
 
   return (
     <>

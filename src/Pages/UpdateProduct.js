@@ -4,21 +4,13 @@ import withRouter from "../Component/wrapper";
 import { Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-// import {
-//   update,
-//   UpdateItem,
-//   UpdateApi,
-//   updateDetails,
-// } from "../Store/updateSlice";
-// import { ListApi } from "../Store/ListSlice";
+
 function UpdateProduct(props) {
-  // console.log(props)
   const [data, setData] = useState([]);
   const [name, setName] = useState();
   const [companyName, setcompanyName] = useState();
   const [price, setPrice] = useState();
   const [description, setDescription] = useState();
-  // const dispatch = useDispatch();
 
   const navigate = useNavigate();
 
@@ -29,10 +21,6 @@ function UpdateProduct(props) {
       );
       response = await response.json();
       setData(response);
-      // setName(response.name);
-      // setcompanyName(response.companyName);
-      // setPrice(response.price);
-      // setDescription(response.description);
     }
     fetchMyAPI();
   }, [data]);
@@ -40,12 +28,6 @@ function UpdateProduct(props) {
   async function handelEditProduct(id) {
     const item = { name, companyName, description, price };
     navigate("/");
-    // const formdata = new FormData();
-    // // formdata.append(" id", id);
-    // formdata.append("name", name);
-    // formdata.append("description", description);
-    // formdata.append("price", price);
-    // formdata.append("companyName",companyName);
 
     let result = await fetch(
       "http://localhost:3000/addProduct/" + id + "?_method=PUT",
@@ -55,15 +37,13 @@ function UpdateProduct(props) {
           "Content-Type": "application/json",
           Accept: "application/json",
         },
-        // body: formdata,
+
         body: JSON.stringify(item),
       }
     );
 
     result = await result.json();
     localStorage.setItem("user-info", JSON.stringify(result));
-
-    // console.log(result, "result from update");
   }
   return (
     <>
@@ -124,15 +104,3 @@ function UpdateProduct(props) {
   );
 }
 export default withRouter(UpdateProduct);
-/**
- *  useEffect(() => {
-    async function fetchMyAPI() {
-      let response = await fetch(
-        "http://localhost:3000/addProduct/" + props.params.id
-      );
-      response = await response.json();
-      setData(response);
-    }
-    fetchMyAPI();
-  }, [])
- */

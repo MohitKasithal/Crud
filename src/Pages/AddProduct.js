@@ -67,25 +67,3 @@ function AddProduct() {
   );
 }
 export default AddProduct;
-
-/**
- * const [companyName_path, setcompanyName] = useState();
-    const [price, setPrice] = useState();
-    const [description, setDescription] = useState();
-   
-    const handleInputName = (e) => {
-        dispatch ( setName(e.target.value));
-      }
-    const handleInputcompanyName = (e) => {
-        dispatch (setcompanyName(e.target.companyNames[0]));
-      }
-    const handleInputPrice = (e) => {
-        dispatch(setPrice(e.target.value));
-      }
-    const handleInputDes = (e) => {
-        dispatch(setDescription(e.target.value));
-      }
-      function formData (){
-        dispatch(fetchProducts(inputValue))
-      }
- */
