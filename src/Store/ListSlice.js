@@ -22,7 +22,10 @@ const ListSlice = createSlice({
   },
   reducers: {
     deleteUser: (state, action) => {
-      state.users = state.users.filter((item) => item !== action.payload);
+      state.users = state.users.filter(
+        (item) => item !== action.payload,
+        ...state
+      );
     },
     update: (state, action) => {
       state.users = state.users.filter((item) => item.id !== action.payload);
@@ -42,10 +45,9 @@ const ListSlice = createSlice({
       state.loading = true;
     },
     [deleteListItem.fulfilled]: (state, action) => {
-      const itr = state[Symbol.iterator];
       const restItem = state.users.filter(
         (item) => item.id !== action.payload.id,
-        ...itr
+        ...state
       );
 
       return restItem;
