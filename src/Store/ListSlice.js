@@ -22,21 +22,19 @@ const ListSlice = createSlice({
   },
   reducers: {
     deleteUser: (state, action) => {
+      console.log(action.payload, ">>>> action");
       state.users = state.users.filter(
         (item) => item !== action.payload,
         ...state
       );
-    },
-    update: (state, action) => {
-      state.users = state.users.filter((item) => item.id !== action.payload);
     },
   },
   extraReducers: {
     [getListApi.pending]: (state) => {
       state.loading = true;
     },
-    [getListApi.fulfilled]: (state, payload) => {
-      return { ...state, users: payload.payload };
+    [getListApi.fulfilled]: (state, { payload }) => {
+      return { ...state, users: payload };
     },
     [getListApi.rejected]: () => {
       //  console.log("rejected")
@@ -46,10 +44,9 @@ const ListSlice = createSlice({
     },
     [deleteListItem.fulfilled]: (state, action) => {
       const restItem = state.users.filter(
-        (item) => item.id !== action.payload.id,
+        (item) => item.id !== action.payload,
         ...state
       );
-
       return restItem;
     },
     [deleteListItem.rejected]: () => {
