@@ -5,7 +5,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Header from "../Component/Header";
 import { useFormik } from "formik";
-import { signUpSchema } from "../schemas/index";
+import { signUpSchema } from "../schemas/registerSc";
 import { type } from "@testing-library/user-event/dist/type";
 
 function Register() {

@@ -44,7 +44,7 @@ const ListSlice = createSlice({
     },
     [deleteListItem.fulfilled]: (state, action) => {
       const restItem = state.users.filter(
-        (item) => item.id !== action.payload,
+        (item) => item.id !== action.payload.id,
         ...state
       );
       return restItem;

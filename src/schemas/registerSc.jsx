@@ -1,7 +1,7 @@
 import * as Yup from "yup";
-const lowercaseRegex = /(?=.*.[a-z])/;
+
 const uppercaseRegex = /(?=.*.[A-Z])/;
-const numberRegex = /(?=.*.[0-9])/;
+
 export const signUpSchema = Yup.object({
   name: Yup.string().min(3).max(25).required("Please enter your name"),
   email: Yup.string()
@@ -18,8 +18,6 @@ export const signUpSchema = Yup.object({
       "at least 1 number or special char (@,!,#, etc)."
     )
     .matches(uppercaseRegex, "one uppercase required!")
-    // .matches(lowercaseRegex, "one lowercase letter required!")
-    // .matches(numberRegex, "one number required!")
     .min(8)
     .required("Please enter your Password"),
   Confirm_Password: Yup.string()
