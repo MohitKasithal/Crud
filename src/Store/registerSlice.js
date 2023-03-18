@@ -9,7 +9,7 @@ const initialState = {
 };
 export const registerAPIData = createAsyncThunk("register", async (data) => {
   console.log(data);
-  let result = await fetch("http://localhost:3000/Ragister", {
+  let result = await fetch("http://localhost:8000/Ragister", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

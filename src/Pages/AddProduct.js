@@ -8,7 +8,6 @@ import { addProducts } from "../Store/AddProSlice";
 function AddProduct() {
   const navigate = useNavigate();
   const inputValue = useSelector((state) => state.inputValue.post);
-
   const [name, setName] = useState();
   const [companyName, setcompanyName] = useState();
   const [price, setPrice] = useState();

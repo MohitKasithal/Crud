@@ -4,7 +4,7 @@ import Header from "../Component/Header";
 function SearchProduct() {
   const [data, setData] = useState([]);
   async function search(key) {
-    let result = await fetch("http://localhost:3000/addProduct?q=" + key);
+    let result = await fetch("http://localhost:3000/Product?q=" + key);
     result = await result.json();
     setData(result);
   }

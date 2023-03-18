@@ -1,3 +1,6 @@
+body {
+  width: 100%;
+}
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -86,8 +89,83 @@
   width: 400px;
 }
 .nav-container {
-  width: auto;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
 }
+
 .inp-br {
   border: 1px solid green;
+}
+
+@media (max-width: 517px) {
+  .nav_bar_wrapper a {
+    font-size: 10px;
+    padding-left: 5px;
+  }
+  .table-div {
+    width: auto;
+    font-size: 13px;
+  }
+  .table-div .btn {
+    padding: auto;
+    margin: 0px;
+    font-size: 10px;
+  }
+}
+@media (max-width: 400px) {
+  .nav_bar_wrapper a {
+    font-size: 10px;
+    padding-left: 5px;
+  }
+  .table-div {
+    width: auto;
+    font-size: 10px;
+  }
+  .table-div .btn {
+    padding: 5px;
+    margin: 0px;
+  }
+  .drop {
+    font-size: 8px;
+  }
+  .navbar .logo {
+    padding-left: 0px;
+    font-size: 12px;
+  }
+}
+@media (max-width: 370px) {
+  .nav_bar_wrapper a {
+    font-size: 7px;
+    padding-left: 2px;
+  }
+  .table-div table {
+    width: 100%;
+    font-size: 8px;
+  }
+  .table-div .btn {
+    padding: 5px;
+    font-size: 8px;
+    margin: 0px;
+  }
+  .drop {
+    font-size: 8px;
+  }
+  .logo {
+    padding-left: 0;
+    font-size: 13px;
+  }
+}
+@media (max-width: 310px) {
+  .table-div table {
+    width: 100%;
+    font-size: 6px;
+    font-weight: 500;
+  }
+  .table-div .btn {
+    padding: 5px;
+    font-size: 6px;
+    margin: 0px;
+  }
 }

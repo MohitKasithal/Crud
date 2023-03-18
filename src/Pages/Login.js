@@ -59,7 +59,7 @@ function Login() {
                   onChange={handleChange}
                 />
                 {errors.email && touched.email ? (
-                  <p style={{ textAlign: "left", color: "blue" }}>
+                  <p style={{ textAlign: "left", color: "red" }}>
                     {errors.email}
                   </p>
                 ) : (
@@ -88,7 +88,7 @@ function Login() {
                   {visible ? <AiOutlineEyeInvisible /> : <AiFillEye />}
                 </button>
                 {errors.password && touched.password ? (
-                  <p style={{ textAlign: "left", color: "blue" }}>
+                  <p style={{ textAlign: "left", color: "red" }}>
                     {errors.password}
                   </p>
                 ) : null}

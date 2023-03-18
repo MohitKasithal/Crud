@@ -21,8 +21,8 @@ function ProductList() {
   return (
     <div className="table h-75">
       <Header />
-      <div className="d-flex align-items-center justify-content-center flex-column">
-        <Table className="col-sm-4  mt-3 tableoflist" hover striped bordered>
+      <div className="d-flex align-items-center justify-content-center flex-column  col-xs-12 table-div">
+        <Table className="col-sm-3  col-md-12  mt-3" hover striped bordered>
           <thead>
             <tr>
               <th>#</th>

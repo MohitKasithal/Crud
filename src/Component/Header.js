@@ -18,9 +18,11 @@ function Header() {
   return (
     <>
       <Navbar bg="dark" variant="dark">
-        <Container className="nav-container">
-          <Navbar.Brand href="#home">Navbar</Navbar.Brand>
-          <Nav className="me-auto nav_bar_wrapper">
+        <Container className="nav-container col-sm-12">
+          <Navbar.Brand href="#home" className="logo">
+            Navbar
+          </Navbar.Brand>
+          <Nav className="me-auto nav_bar_wrapper  ">
             {userData ? (
               <>
                 <Link to={"/"}>ProductList</Link>
@@ -36,7 +38,7 @@ function Header() {
           </Nav>
           {userData ? (
             <Nav>
-              <NavDropdown title={user && user.name}>
+              <NavDropdown className="drop" title={user && user.name}>
                 <NavDropdown.Item onClick={handleLogout}>
                   Logout
                 </NavDropdown.Item>

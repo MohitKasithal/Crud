@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import withRouter from "../Component/wrapper";
 import { Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
+// import { useDispatch } from "react-redux";
 
 function UpdateProduct(props) {
   const [data, setData] = useState([]);
@@ -17,7 +17,7 @@ function UpdateProduct(props) {
   useEffect(() => {
     async function fetchMyAPI() {
       let response = await fetch(
-        "http://localhost:3000/addProduct/" + props.params.id
+        "http://localhost:8000/Product/" + props.params.id
       );
       response = await response.json();
       setData(response);
@@ -30,7 +30,7 @@ function UpdateProduct(props) {
     navigate("/");
 
     let result = await fetch(
-      "http://localhost:3000/addProduct/" + id + "?_method=PUT",
+      "http://localhost:8000/Product/" + id + "?_method=PUT",
       {
         method: "PUT",
         headers: {

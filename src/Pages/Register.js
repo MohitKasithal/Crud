@@ -84,7 +84,7 @@ function Register() {
               />
             </div>
             {errors.name && touched.name ? (
-              <p style={{ textAlign: "left", color: "blue" }}>{errors.name}</p>
+              <p style={{ textAlign: "left", color: "red" }}>{errors.name}</p>
             ) : null}
             <div className="form-input">
               <input
@@ -98,7 +98,7 @@ function Register() {
               />
             </div>
             {errors.email && touched.email ? (
-              <p style={{ textAlign: "left", color: "blue" }}>{errors.email}</p>
+              <p style={{ textAlign: "left", color: "red" }}>{errors.email}</p>
             ) : null}
             <div className="form-input" style={{ position: "relative" }}>
               <input
@@ -120,7 +120,7 @@ function Register() {
             </div>
 
             {errors.password && touched.password ? (
-              <p style={{ textAlign: "left", color: "blue" }}>
+              <p style={{ textAlign: "left", color: "red" }}>
                 {errors.password}
               </p>
             ) : null}
@@ -135,11 +135,11 @@ function Register() {
                 className="form-control"
               />
               <button type={"button"} className="eye" onClick={confirmEye}>
-                {visible2 ? <AiFillEye /> : <AiOutlineEyeInvisible />}
+                {visible2 ? <AiOutlineEyeInvisible /> : <AiFillEye />}
               </button>
             </div>
             {errors.Confirm_Password && touched.Confirm_Password ? (
-              <p style={{ textAlign: "left", color: "blue" }}>
+              <p style={{ textAlign: "left", color: "red" }}>
                 {errors.Confirm_Password}
               </p>
             ) : null}

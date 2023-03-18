@@ -2,7 +2,7 @@ const { createSlice, createAsyncThunk } = require("@reduxjs/toolkit");
 
 export const loginApi = createAsyncThunk("addProduct", async (data) => {
   // console.log(data,"from login")
-  let result = await fetch("http://localhost:3000/Login", {
+  let result = await fetch("http://localhost:8000/Login", {
     method: "GET",
     headers: {
       "Content-Type": "application/json",

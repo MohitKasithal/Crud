@@ -1,12 +1,12 @@
 const { createSlice, createAsyncThunk } = require("@reduxjs/toolkit");
 
 export const getListApi = createAsyncThunk("ProSlice/getData", async () => {
-  let response = await fetch("http://localhost:3000/addProduct");
+  let response = await fetch("http://localhost:8000/Product");
   response = await response.json();
   return response;
 });
 export const deleteListItem = createAsyncThunk("deleteItem", async (id) => {
-  let result = await fetch(`http://localhost:3000/addProduct/${id}`, {
+  let result = await fetch(`http://localhost:8000/Product/${id}`, {
     method: "DELETE",
   });
 
@@ -22,7 +22,6 @@ const ListSlice = createSlice({
   },
   reducers: {
     deleteUser: (state, action) => {
-      console.log(action.payload, ">>>> action");
       state.users = state.users.filter(
         (item) => item !== action.payload,
         ...state

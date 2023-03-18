@@ -1,7 +1,7 @@
 const { createSlice, createAsyncThunk } = require("@reduxjs/toolkit");
 
 export const addProducts = createAsyncThunk("addProduct", async (data) => {
-  const res = await fetch(` http://localhost:3000/addProduct/ `, {
+  const res = await fetch(` http://localhost:8000/Product/ `, {
     method: "POST",
     body: JSON.stringify(data),
     headers: {
