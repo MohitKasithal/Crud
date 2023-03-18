@@ -40,7 +40,7 @@ function SearchProduct() {
             {data.length > 0 ? (
               <Table
                 className="col-sm-8 table-div"
-                style={{ color: "green" }}
+                style={{ color: "green", fontWeight: 500 }}
                 hover
                 striped
                 bordered>
@@ -48,7 +48,7 @@ function SearchProduct() {
                   <tr>
                     <th>#</th>
                     <th>Name</th>
-                    <th>Image</th>
+                    <th>Company</th>
                     <th>Description</th>
                     <th>Price</th>
                   </tr>

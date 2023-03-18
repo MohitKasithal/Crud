@@ -88,8 +88,11 @@ body {
 .div-update {
   width: 400px;
 }
+
 .table-div table {
   color: green;
+  text-align: center;
+  font-weight: 600;
 }
 
 .nav-container {

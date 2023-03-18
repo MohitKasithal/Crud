@@ -21,13 +21,13 @@ function ProductList() {
   return (
     <div className="table h-75">
       <Header />
-      <div className="d-flex align-items-center justify-content-center flex-column  col-xs-12 table-div">
-        <Table className="col-sm-3  col-md-12  mt-3" hover striped bordered>
+      <div className=" table-div d-flex align-items-center justify-content-center flex-column   ">
+        <Table className="col-sm-3  col-md-12 mt-3" hover striped bordered>
           <thead>
             <tr>
               <th>#</th>
               <th>Name</th>
-              <th>Image</th>
+              <th>Company</th>
               <th>Description</th>
               <th>Price</th>
               <th> Delete </th>
