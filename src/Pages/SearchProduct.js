@@ -38,7 +38,12 @@ function SearchProduct() {
             />
             <br />
             {data.length > 0 ? (
-              <Table className="col-sm-8 tableoflist" hover striped bordered>
+              <Table
+                className="col-sm-8 table-div"
+                style={{ color: "green" }}
+                hover
+                striped
+                bordered>
                 <thead>
                   <tr>
                     <th>#</th>
@@ -49,8 +54,8 @@ function SearchProduct() {
                   </tr>
                 </thead>
                 <tbody>
-                  {data.map((item) => (
-                    <tr>
+                  {data.map((item, i) => (
+                    <tr key={i}>
                       <td>{item.id}</td>
                       <td>{item.name}</td>
                       <td>{item.companyName}</td>

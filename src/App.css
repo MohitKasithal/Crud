@@ -88,6 +88,10 @@ body {
 .div-update {
   width: 400px;
 }
+.table-div table {
+  color: green;
+}
+
 .nav-container {
   width: 100%;
   display: flex;
