@@ -4,7 +4,7 @@ import Header from "../Component/Header";
 function SearchProduct() {
   const [data, setData] = useState([]);
   async function search(key) {
-    let result = await fetch("http://localhost:3000/Product?q=" + key);
+    let result = await fetch("http://localhost:8000/Product?q=" + key);
     result = await result.json();
     setData(result);
   }
@@ -53,9 +53,7 @@ function SearchProduct() {
                     <tr>
                       <td>{item.id}</td>
                       <td>{item.name}</td>
-                      <td>
-                        <img style={{ width: "50px" }} src={item.companyName} />
-                      </td>
+                      <td>{item.companyName}</td>
                       <td>{item.description}</td>
                       <td>{item.price}</td>
                     </tr>
