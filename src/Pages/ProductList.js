@@ -14,8 +14,8 @@ function ProductList() {
   }, []);
 
   const handleRemoveUser = (id) => {
-    dispatch(deleteListItem(id));
-    dispatch(deleteUser(id));
+    dispatch(deleteListItem(id.toString()));
+    dispatch(deleteUser(id.toString()));
   };
 
   return (

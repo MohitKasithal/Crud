@@ -9,7 +9,6 @@ export const deleteListItem = createAsyncThunk("deleteItem", async (id) => {
   let result = await fetch(`http://localhost:8000/Product/${id}`, {
     method: "DELETE",
   });
-
   return result;
 });
 
@@ -22,35 +21,51 @@ const ListSlice = createSlice({
   },
   reducers: {
     deleteUser: (state, action) => {
-      state.users = state.users.filter(
-        (item) => item !== action.payload,
-        ...state
-      );
+      const { id } = action.payload;
+      const res = state.users.filter((item) => item.id !== id);
+      return { ...state, res };
     },
   },
-  extraReducers: {
-    [getListApi.pending]: (state) => {
-      state.loading = true;
-    },
-    [getListApi.fulfilled]: (state, { payload }) => {
-      return { ...state, users: payload };
-    },
-    [getListApi.rejected]: () => {
-      //  console.log("rejected")
-    },
-    [deleteListItem.pending]: (state) => {
-      state.loading = true;
-    },
-    [deleteListItem.fulfilled]: (state, action) => {
-      const restItem = state.users.filter(
-        (item) => item.id !== action.payload.id,
-        ...state
-      );
-      return restItem;
-    },
-    [deleteListItem.rejected]: () => {
-      console.log("rejected");
-    },
+  // extraReducers: {
+  //   [getListApi.pending]: (state) => {
+  //     state.loading = true;
+  //   },
+  //   [getListApi.fulfilled]: (state, { payload }) => {
+  //     return { ...state, users: payload };
+  //   },
+  //   [getListApi.rejected]: () => {
+  //     //  console.log("rejected")
+  //   },
+  //   // [deleteListItem.pending]: (state) => {
+  //   //   state.loading = true;
+  //   // },
+  //   // [deleteListItem.fulfilled]: (state, action) => {
+  //   //   console.log(action.payload);
+
+  //   //   const Data = state.users.filter((item) => item.id !== action.payload.id);
+  //   //   return
+  //   // },
+  //   // [deleteListItem.rejected]: () => {
+  //   //   console.log("rejected");
+  //   // },
+  // },
+  extraReducers: (builder) => {
+    builder
+      .addCase(getListApi.pending, (state, action) => {
+        state.loading = true;
+      })
+      .addCase(getListApi.fulfilled, (state, { payload }) => {
+        state.users = payload;
+        state.loading = false;
+      })
+      .addCase(getListApi.rejected, (state, action) => {
+        state.loading = false;
+      })
+      .addCase(deleteListItem.fulfilled, (state, { payload }) => {
+        const { id } = payload;
+        const res = state.users.filter((item) => item.id !== id);
+        return { ...state, res };
+      });
   },
 });
 
