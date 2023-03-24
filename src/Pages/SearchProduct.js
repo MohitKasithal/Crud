@@ -19,7 +19,7 @@ function SearchProduct() {
         }}>
         <div className="form-group col-sm-8  d-flex justify-content-center align-items-center  ">
           <div className="col-sm-8 bg-white p-3 w-100 ">
-            <h2>Search Product</h2>
+            <h2 className="searchH2">Search Product</h2>
             <hr
               style={{
                 color: "darkblue",
@@ -66,7 +66,9 @@ function SearchProduct() {
                 </tbody>
               </Table>
             ) : (
-              <h1 className="d-flex justify-content-center">Not found</h1>
+              <h1 className="d-flex justify-content-center notFound">
+                Not found
+              </h1>
             )}
           </div>
         </div>
