@@ -39,7 +39,7 @@ function Header() {
           {userData ? (
             <Nav>
               <NavDropdown className="drop" title={user && user.name}>
-                <NavDropdown.Item onClick={handleLogout}>
+                <NavDropdown.Item className="droplink" onClick={handleLogout}>
                   Logout
                 </NavDropdown.Item>
               </NavDropdown>
